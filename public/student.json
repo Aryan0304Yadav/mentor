@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Aryan Yadav",
+    "academics": 99,
+    "sports": 99,
+    "events": 99
+  },
+  {
+    "name": "Ritika Sharma",
+    "academics": 70,
+    "sports": 40,
+    "events": 90
+  },
+  {
+    "name": "Shubham Singh",
+    "academics": 90,
+    "sports": 70,
+    "events": 80
+  },
+  {
+    "name": "Neha Rathi",
+    "academics": 55,
+    "sports": 30,
+    "events": 60
+  },
+  {
+    "name": "Rahul Kumar",
+    "academics": 45,
+    "sports": 85,
+    "events": 40
+  },
+  {
+    "name": "Simran Kaur",
+    "academics": 75,
+    "sports": 55,
+    "events": 70
+  },
+  {
+    "name": "Vikram Singh",
+    "academics": 60,
+    "sports": 20,
+    "events": 30
+  },
+  {
+    "name": "Aditi Mehta",
+    "academics": 80,
+    "sports": 75,
+    "events": 60
+  }
+]

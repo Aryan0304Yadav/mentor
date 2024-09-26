@@ -1,0 +1,146 @@
+.content { 
+  width: 75%;
+}
+.content--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header--title {
+  color: #526d82;
+}
+.header--activity {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search-box {
+  background: #dde6ed;
+  padding: 8px 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  background: #dde6ed !important;
+  border:none !important;
+  padding: 5px;
+  outline: none;
+}
+
+.search-box .icon {
+  color: #969393;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.search-box .icon:active {
+  color: #5f5e5e;
+}
+
+.notify {
+  background: #dde6ed;
+  padding: 12px;
+  border-radius: 10px;
+  color: #969393;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease-in-out;
+
+}
+
+.notify .icon {
+  font-size: 20px;
+
+  transition: 0.2s ease-in-out;
+}
+
+.icon:hover {
+  color: #526d82;
+  transform: scale(1.3);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/*
+.content {
+  width: 100%; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+*/
+
+.menu {
+  width: 250px;
+}
+
+.menu .item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #333; /* Default color */
+  text-decoration: none;
+  /* Other styles */
+}
+
+.menu .item.active {
+  background-color: #526d82;
+  /* Highlight color */
+}
+
+.menu .icon {
+  margin-right: 10px;
+  /* Other styles */
+}
+
+.card--container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.card {
+  flex: 1; /* Adjusted to 21% to fit five cards with gaps */
+  background: #dde6ed;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.09);
+  cursor: pointer;
+}
+
+.card--cover {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #4a5568; /* Default color of the icons */
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
+
+/* Change the icon color on card hover */
+.card:hover .card--cover .card-icon {
+  color: #145090; /* Change to the desired hover color */
+}
+.card--title{
+  background: #ffffffc0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #526d82;
+  border-radius: 10px;
+}
+

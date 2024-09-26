@@ -1,0 +1,112 @@
+/* Sidebar container */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+  height: 94vh;
+}
+
+/* Logo styling */
+.logo {
+  text-align: center;
+  padding: 20px;
+  color: #27374d;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+/* Make the logo clickable */
+.logo a {
+  text-decoration: none;
+  color: #27374d;
+  display: flex;
+  align-items: center;
+}
+
+/* Icon styling */
+.logo-icon {
+  font-size: 1.4rem;
+}
+
+/* Menu list styling */
+.menu--list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Menu item styling */
+.menu--list .item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  color: #27374d;
+}
+
+/* Hover and Active states */
+.menu--list .item:hover,
+.menu--list .item.active {
+  background: #27374d;
+  color: #dde6ed !important;
+}
+
+/* Dropdown Container */
+.dropdown {
+  display: flex;
+  flex-direction: column; /* Ensure items are stacked vertically */
+}
+
+/* Dropdown Toggle Button */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+/* Chevron icon for dropdown */
+.dropdown-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg); /* Rotate the icon when dropdown is open */
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 10px;
+  margin-top: 10px;
+  background-color: #dde6ed;
+  padding: 10px;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu .dropdown-item {
+  padding: 8px 10px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #27374d;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item.active {
+  background-color: #526d82; /*Colour for the Drop down Act form sections*/
+  color: #dde6ed;
+}

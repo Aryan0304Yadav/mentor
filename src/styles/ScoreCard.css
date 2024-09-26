@@ -1,0 +1,86 @@
+/* Ensure all elements use border-box sizing */
+* {
+  box-sizing: border-box;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.leaderboard--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  padding: 20px; /* Add some padding */
+  background-color: #f5f7fa; /* Optional background color */
+}
+
+.leaderboard--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #526d82;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard--list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%; /* Ensure it takes the full width of the container */
+  margin-top: 20px; /* Spacing from the header */
+  overflow-y: auto; /* Scrollable if too long */
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.leaderboard--item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #dde6ed;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: 100%; /* Ensure it fills the width of the list */
+}
+
+.leaderboard--item:hover {
+  transform: scale(1.02); /* Slight hover effect */
+}
+
+.student--detail {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.student--detail img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #526d82;
+}
+
+.student--info h3 {
+  font-size: 18px;
+  color: #526d82;
+}
+
+/* Category background colors */
+.leaderboard--item.green {
+  background-color: #d4edda; /* Green background for good students */
+}
+
+.leaderboard--item.yellow {
+  background-color: #fff3cd; /* Yellow background for average students */
+}
+
+.leaderboard--item.red {
+  background-color: #f8d7da; /* Red background for poor students */
+}

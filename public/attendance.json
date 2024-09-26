@@ -1,0 +1,29 @@
+{
+  "attendance": [
+    {
+      "subject": "Mathematics",
+      "theory": 80,
+      "lab": 0
+    },
+    {
+      "subject": "Physics",
+      "theory": 75,
+      "lab": 85
+    },
+    {
+      "subject": "Chemistry",
+      "theory": 90,
+      "lab": 80
+    },
+    {
+      "subject": "Computer Science",
+      "theory": 95,
+      "lab": 92
+    },
+    {
+      "subject": "English",
+      "theory": 88,
+      "lab": 0
+    }
+  ]
+}

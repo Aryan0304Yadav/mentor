@@ -1,0 +1,72 @@
+.mentee-queries {
+    width: 75%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .mentee-queries .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .mentee-queries .header--title {
+    color: #526d82; /* Heading color */
+    font-size: 1.5rem;
+  }
+
+
+  .mentee-queries .header--activity {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .mentee-queries .search-box {
+    background: #dde6ed; /* Background color */
+    padding: 8px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mentee-queries .search-box input {
+    border: none;
+    outline: none;
+    background: #dde6ed !important; /* Ensure background is consistent */
+    padding: 5px;
+    color: #526d82; /* Input text color */
+  }
+  
+  .mentee-queries .search-box .icon {
+    color: #526d82; /* Icon color */
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .mentee-queries .search-box .icon:active {
+    color: #4a5568; /* Slightly darker on active */
+  }
+  
+  .mentee-queries .notify {
+    background: #dde6ed; /* Background color */
+    padding: 12px;
+    border-radius: 10px;
+    color: #526d82; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .mentee-queries .notify .icon {
+    font-size: 20px;
+  }
+  
+  .mentee-queries .notify .icon:hover {
+    color: #4a5568; /* Hover color */
+    transform: scale(1.3);
+  }
+  
