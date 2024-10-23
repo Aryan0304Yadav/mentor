@@ -1,44 +1,86 @@
-.list--header{
+.list--header {
   display: flex;
   margin: 2rem 0;
   justify-content: space-between;
 }
-.list--header h2{
+.list--header h2 {
   color: #526d82;
-
 }
-.list--header select{
+.list--header select {
   border-radius: 10px;
   border: none;
   padding: 8px 12px;
   border: 1px solid #dde6ed;
-  color:#526d82;
-}
-.list--container{
-  display: flex;
-  flex-direction: column;
-  gap:15px;
-}
-.list{
-  display: flex;
-  padding-right: 10px;
-  align-items: center;
-  justify-content: space-between;
-  transition: 0.3s ease-in-out;
-}
-.student--detail{
-  display: flex;
-  align-items: center;
-  gap: 20px;
   color: #526d82;
 }
-.student--detail img{
+
+/* Table header styling */
+.table--header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-weight: bold;
+  color: #526d82;
+  background-color: #dde6ed;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Column styling for both header and data */
+.column {
+  flex: 1; /* Ensures equal space between columns */
+  text-align: left; /* Default left-alignment */
+  padding-left: 10px;
+  color: #526d82;
+}
+
+/* Aligning Semester and Attendance in the center */
+.column.semester, .column.attendance {
+  text-align: center; /* Center alignment for semester and attendance */
+}
+
+/* List container styling */
+.list--container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Student row styling */
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #dde6ed;
+  transition: 0.3s ease-in-out;
+}
+
+/* Student detail styling */
+.student--detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.student--detail img {
   width: 50px;
+  height: 50px;
   background: #dde6ed;
   border-radius: 50%;
 }
-.list:hover{
+
+/* Hover effect */
+.list:hover {
   background: #dde6ed;
   border-radius: 10px;
-  
+}
+
+/* Adjusting column widths */
+.column {
+  width: 25%; /* Each column takes up 25% of the total row width */
+}
+
+span {
+  color: #526d82;
 }
