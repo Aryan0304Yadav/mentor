@@ -1,8 +1,8 @@
-# MentorDashboard
+# Mentor Dashboard (Mentor Mentee)
 
 ## Overview
 
-MentorDashboard is a comprehensive platform designed to manage and streamline mentor-mentee interactions. It provides various functionalities, including a dashboard for mentors, a query management system for mentees, and customizable settings for accessibility and user preferences.
+Mentor Dashboard is a comprehensive platform designed to manage and streamline mentor-mentee interactions. It provides various functionalities, including a dashboard for mentors, a query management system for mentees, and customizable settings for accessibility and user preferences.
 
 ## Features
 
