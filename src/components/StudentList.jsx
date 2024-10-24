@@ -12,6 +12,8 @@ const StudentList = () => {
 
   useEffect(() => {
     axios.get('https://run.mocky.io/v3/f65fadd7-576c-42a4-88bd-effad6e4498c')  // Dummy API
+    // axios.get('https://mentor-mentee-backend.vercel.app/mentors') // Make sure the path is correct
+
       .then(response => {
         setStudents(response.data);
         setLoading(false);
@@ -66,6 +68,8 @@ const StudentList = () => {
               <div className="column student--detail">
                 <img src={student.image || Image1} alt={student.name}></img>
                 <span>{student.name}</span>
+                {/* <img src={student.image || Image1} alt={student.fullname}></img>
+                <span>{student.fullname}</span> */}
               </div>
               <div className="column">{student.branch || 'N/A'}</div>
               <div className="column">{student.semester || 'N/A'}</div>

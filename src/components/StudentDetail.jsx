@@ -14,6 +14,8 @@ const StudentDetail = () => {
       try {
         // Replace the URL with your actual API endpoint for fetching student data by PRN
         const response = await axios.get(`https://run.mocky.io/v3/f65fadd7-576c-42a4-88bd-effad6e4498c`);
+        // const response = await axios.get('https://mentor-mentee-backend.vercel.app/mentors'); // Make sure the path is correct
+
         const students = response.data;
 
         // Find the student by prn
