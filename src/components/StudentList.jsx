@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import axios from 'axios';
 import '../styles/StudentList.css';
 import Image1 from '../assets/images/carti.jpg'; 
@@ -10,7 +11,7 @@ const StudentList = () => {
   const [filter, setFilter] = useState('all');
 
   useEffect(() => {
-    axios.get('https://run.mocky.io/v3/83e9375f-dbf4-4bc6-ab15-99822695bcde')
+    axios.get('https://run.mocky.io/v3/f65fadd7-576c-42a4-88bd-effad6e4498c')  // Dummy API
       .then(response => {
         setStudents(response.data);
         setLoading(false);
@@ -56,15 +57,21 @@ const StudentList = () => {
       </div>
       <div className="list--container">
         {filteredStudents.map((student, index) => (
-          <div className='list' key={index}>
-            <div className="column student--detail">
-              <img src={student.image || Image1} alt={student.name}></img>
-              <span>{student.name}</span>
+          <Link 
+            to={`/student-detail/${student.prn}`}  // Route to student detail page with PRN
+            key={index}
+            className='student--link'
+          >
+            <div className='list'>
+              <div className="column student--detail">
+                <img src={student.image || Image1} alt={student.name}></img>
+                <span>{student.name}</span>
+              </div>
+              <div className="column">{student.branch || 'N/A'}</div>
+              <div className="column">{student.semester || 'N/A'}</div>
+              <div className="column">{student.attendance}%</div>
             </div>
-            <div className="column">{student.branch || 'N/A'}</div>
-            <div className="column">{student.semester || 'N/A'}</div>
-            <div className="column">{student.attendance}%</div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
