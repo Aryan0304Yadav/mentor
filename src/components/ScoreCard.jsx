@@ -13,12 +13,12 @@ const ScoreBoard = () => {
     // Fetch student data
     const fetchStudents = async () => {
       try {
-        // const response = await axios.get('/student.json'); // Make sure the path is correct
-        const response = await axios.get('https://mentor-mentee-backend.vercel.app/mentors'); // Make sure the path is correct
+        const response = await axios.get('https://run.mocky.io/v3/f65fadd7-576c-42a4-88bd-effad6e4498c'); // Make sure the path is correct
+        // const response = await axios.get('https://mentor-mentee-backend.vercel.app/mentors'); // Make sure the path is correct
 
         const formattedData = response.data.map(student => ({
-          // name: student.name,
-          name: student.fullname,
+          name: student.name,
+          // name: student.fullname,
           academics: student.academics,
           sports: student.sports,
           events: student.events,

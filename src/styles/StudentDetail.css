@@ -1,0 +1,59 @@
+.student--details {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.student--details h2 {
+  color: #526d82;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.detail--section {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for responsive layout */
+  gap: 30px; /* Increased space between fields */
+}
+
+.detail--section p {
+  flex: 1 1 calc(50% - 15px); /* Two fields per row with more space */
+  font-size: 16px;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.detail--section p strong {
+  color: #526d82;
+}
+
+.detail--section .full-width {
+  flex: 1 1 100%; /* Full-width for specific fields */
+}
+
+.detail--section h3 {
+  width: 100%; /* Full-width heading */
+  margin-top: 20px;
+  color: #526d82;
+}
+
+@media (max-width: 768px) {
+  .student--details {
+    padding: 15px;
+  }
+
+  .student--details h2 {
+    font-size: 20px;
+  }
+
+  .detail--section p {
+    font-size: 14px;
+    flex: 1 1 100%; /* Stack fields on smaller screens */
+  }
+}

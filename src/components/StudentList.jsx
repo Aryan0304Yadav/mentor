@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import axios from 'axios';
 import '../styles/StudentList.css';
 import Image1 from '../assets/images/carti.jpg'; 
 
 const StudentList = () => {
-  const [students, setStudents] = useState([]); // State for students
-  const [loading, setLoading] = useState(true); // State for loading
-  const [error, setError] = useState(null); // State for error handling
+  const [students, setStudents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
-    // Fetching students data (mocked for now)
-    // axios.get('https://jsonplaceholder.typicode.com/users')
-    axios.get('https://mentor-mentee-backend.vercel.app/mentors')
-
-
+    axios.get('https://run.mocky.io/v3/f65fadd7-576c-42a4-88bd-effad6e4498c')  // Dummy API
       .then(response => {
-        setStudents(response.data); // Assuming response contains the student data
+        setStudents(response.data);
         setLoading(false);
       })
       .catch(error => {
@@ -23,6 +21,15 @@ const StudentList = () => {
         setLoading(false);
       });
   }, []);
+
+  const filteredStudents = students.filter(student => {
+    if (filter === 'defaulters') {
+      return student.attendance < 75 && student.attendance >= 50;
+    } else if (filter === 'critical') {
+      return student.attendance < 50;
+    }
+    return true;
+  });
 
   if (loading) {
     return <div>Loading...</div>;
@@ -35,24 +42,36 @@ const StudentList = () => {
   return (
     <div className='student--list'>
       <div className="list--header">
-        <h2>Students</h2>
-        <select>
-          <option value='batch1'>H1</option>
-          <option value='batch2'>H2</option>
-          <option value='batch3'>H3</option>
+        <h2>Student List</h2>
+        <select onChange={(e) => setFilter(e.target.value)}>
+          <option value='all'>All Students</option>
+          <option value='defaulters'>Defaulters (Attendance &lt; 75%)</option>
+          <option value='critical'>Critical Defaulters (Attendance &lt; 50%)</option>
         </select>
       </div>
+      <div className="table--header">
+        <div className="column">Name</div>
+        <div className="column">Branch</div>
+        <div className="column">Semester</div>
+        <div className="column">Attendance</div>
+      </div>
       <div className="list--container">
-        {students.map((student, index) => (
-          <div className='list' key={index}>
-            <div className="student--detail">
-              <img src={student.image || Image1} alt={student.name}></img>
-              <h2>{student.name}</h2>
+        {filteredStudents.map((student, index) => (
+          <Link 
+            to={`/student-detail/${student.prn}`}  // Route to student detail page with PRN
+            key={index}
+            className='student--link'
+          >
+            <div className='list'>
+              <div className="column student--detail">
+                <img src={student.image || Image1} alt={student.name}></img>
+                <span>{student.name}</span>
+              </div>
+              <div className="column">{student.branch || 'N/A'}</div>
+              <div className="column">{student.semester || 'N/A'}</div>
+              <div className="column">{student.attendance}%</div>
             </div>
-            <span>Branch: {student.branch}</span>
-            <span>Semester: {student.semester}</span>
-            <span className='student--todo'>:</span>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
