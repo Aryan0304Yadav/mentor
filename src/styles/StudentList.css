@@ -70,7 +70,7 @@
   border-radius: 50%;
 }
 
-/* Hover effect */
+/* Hover effect for the entire row */
 .list:hover {
   background: #dde6ed;
   border-radius: 10px;
@@ -83,4 +83,26 @@
 
 span {
   color: #526d82;
+}
+
+/* Remove underline from Link components (student--link class) */
+.student--link {
+  text-decoration: none !important; /* Force remove the underline */
+  color: inherit; /* Keep the text color the same as its container */
+}
+
+/* Optional: Hover effect for the links */
+.student--link:hover {
+  color: #3b5060; /* Change the color when hovering over the link */
+}
+
+/* Responsive design (optional) */
+@media (max-width: 768px) {
+  .column {
+    width: 100%;
+    text-align: left;
+  }
+  .table--header, .list {
+    flex-direction: column;
+  }
 }
