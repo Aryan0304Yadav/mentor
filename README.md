@@ -1,8 +1,8 @@
-# MentorDashboard
+# Mentor Dashboard (Mentor Mentee Digitalisation)
 
 ## Overview
 
-MentorDashboard is a comprehensive platform designed to manage and streamline mentor-mentee interactions. It provides various functionalities, including a dashboard for mentors, a query management system for mentees, and customizable settings for accessibility and user preferences.
+Mentor Dashboard is a comprehensive platform designed to manage and streamline mentor-mentee interactions. It provides various functionalities, including a dashboard for mentors, a query management system for mentees, and customizable settings for accessibility and user preferences.
 
 ## Features
 
@@ -55,4 +55,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For any questions or feedback, please reach out to:
 
 - **Name**: Abaan
-- **Email**: abaan9350@gmail.com"# mentor_dash" 
+- **Email**: abaan9350@gmail.com 
