@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
-import axios from 'axios';
-import '../styles/StudentList.css';
-import Image1 from '../assets/images/carti.jpg'; 
+import React, { useState, useEffect } from "react";
+import "../styles/DashboardTable.css";
+import axios from "axios";
 
-const StudentList = () => {
-  const [students, setStudents] = useState([]);
+const DashboardTable = () => {
+  const [batches, setBatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [filter, setFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [semesterFilter, setSemesterFilter] = useState("all");
 
   useEffect(() => {
-    axios.get('https://run.mocky.io/v3/f65fadd7-576c-42a4-88bd-effad6e4498c')  // Dummy API
-      .then(response => {
-        setStudents(response.data);
+    // Dummy API for fetching batches
+    axios
+      .get("https://run.mocky.io/v3/7b93e856-f282-44cd-b3c4-a5640bbe50b6") // Replace with your API
+      .then((response) => {
+        setBatches(response.data);
         setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         setError(error.message);
         setLoading(false);
       });
   }, []);
 
-  const filteredStudents = students.filter(student => {
-    if (filter === 'defaulters') {
-      return student.attendance < 75 && student.attendance >= 50;
-    } else if (filter === 'critical') {
-      return student.attendance < 50;
-    }
-    return true;
+  // Filtered batches based on search and semester filter
+  const filteredBatches = batches.filter((batch) => {
+    const matchesSearch = batch.batchName.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSemester =
+      semesterFilter === "all" || batch.semester === parseInt(semesterFilter, 10);
+    return matchesSearch && matchesSemester;
   });
 
   if (loading) {
@@ -40,42 +40,46 @@ const StudentList = () => {
   }
 
   return (
-    <div className='student--list'>
-      <div className="list--header">
-        <h2>Student List</h2>
-        <select onChange={(e) => setFilter(e.target.value)}>
-          <option value='all'>All Students</option>
-          <option value='defaulters'>Defaulters (Attendance &lt; 75%)</option>
-          <option value='critical'>Critical Defaulters (Attendance &lt; 50%)</option>
+    <div className="dashboard--table">
+      <div className="table--controls">
+        <input
+          type="text"
+          placeholder="Search by Batch (e.g., H1)"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <select onChange={(e) => setSemesterFilter(e.target.value)}>
+          <option value="all">All Semesters</option>
+          <option value="1">Semester 1</option>
+          <option value="2">Semester 2</option>
+          <option value="3">Semester 3</option>
+          <option value="4">Semester 4</option>
+          <option value="5">Semester 5</option>
+          <option value="6">Semester 6</option>
+          <option value="7">Semester 7</option>
+          <option value="8">Semester 8</option>
+
+          {/* Add more options as needed */}
         </select>
       </div>
       <div className="table--header">
-        <div className="column">Name</div>
+        <div className="column">Batch</div>
         <div className="column">Branch</div>
         <div className="column">Semester</div>
-        <div className="column">Attendance</div>
+        <div className="column">Number of Mentees</div>
       </div>
-      <div className="list--container">
-        {filteredStudents.map((student, index) => (
-          <Link 
-            to={`/student-detail/${student.prn}`}  // Route to student detail page with PRN
-            key={index}
-            className='student--link'
-          >
-            <div className='list'>
-              <div className="column student--detail">
-                <img src={student.image || Image1} alt={student.name}></img>
-                <span>{student.name}</span>
-              </div>
-              <div className="column">{student.branch || 'N/A'}</div>
-              <div className="column">{student.semester || 'N/A'}</div>
-              <div className="column">{student.attendance}%</div>
-            </div>
-          </Link>
+      <div className="table--body">
+        {filteredBatches.map((batch, index) => (
+          <div key={index} className="table--row">
+            <div className="column">{batch.batchName}</div>
+            <div className="column">{batch.branch}</div>
+            <div className="column">{batch.semester}</div>
+            <div className="column">{batch.menteesCount}</div>
+          </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
-export default StudentList;
+export default DashboardTable;
