@@ -6,14 +6,18 @@ import Profile from './components/Profile';
 import MenteeQueries from './components/MenteeQueries';
 import Settings from './components/Settings';
 import ScoreCard from './components/ScoreCard';
-import StudentDetail from './components/StudentDetail'; // Import StudentDetail component
+import StudentDetail from './components/StudentDetail';
+import ActiveMentees from './components/ActiveMentees'; // Import ActiveMentees component
+import ChangesForApproval from './components/ChangesForApproval'; // Import ChangesForApproval component
+import LeaveApproval from './components/LeaveApproval'; // Import LeaveApproval component
+import MentorObservations from './components/MentorObservations'; // Import MentorObservations component
 import './App.css';
 
 const App = () => {
   return (
     <Router>
       <div className='dashboard'>
-        <Sidebar />  {/* Sidebar is fixed on the left */}
+        <Sidebar /> {/* Sidebar is fixed on the left */}
         <div className="dashboard--content">
           <Routes>
             {/* Default route redirects to the dashboard with a sample PRN */}
@@ -30,7 +34,13 @@ const App = () => {
             <Route path="/score-card/:prn" element={<ScoreCard />} />
 
             {/* Mentor-view of the Mentee's filled form (Student Detail route) */}
-            <Route path="/student-detail/:prn" element={<StudentDetail />} />  {/* Displays the form data filled by mentee */}
+            <Route path="/student-detail/:prn" element={<StudentDetail />} /> {/* Displays the form data filled by mentee */}
+
+            {/* Newly added routes */}
+            <Route path="/active-mentees/:prn" element={<ActiveMentees />} />
+            <Route path="/changes-for-approval/:prn" element={<ChangesForApproval />} />
+            <Route path="/leave-approval/:prn" element={<LeaveApproval />} />
+            <Route path="/mentor-observations/:prn" element={<MentorObservations />} />
           </Routes>
         </div>
       </div>

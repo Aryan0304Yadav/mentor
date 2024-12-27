@@ -1,16 +1,23 @@
+.student--list {
+  width: 100%; /* Occupy full width */
+  padding: 20px; /* Add consistent spacing */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
 .list--header {
   display: flex;
-  margin: 2rem 0;
+  margin-bottom: 1rem;
   justify-content: space-between;
 }
+
 .list--header h2 {
   color: #526d82;
 }
+
 .list--header select {
   border-radius: 10px;
-  border: none;
-  padding: 8px 12px;
   border: 1px solid #dde6ed;
+  padding: 8px 12px;
   color: #526d82;
 }
 
@@ -26,17 +33,15 @@
   margin-bottom: 15px;
 }
 
-/* Column styling for both header and data */
 .column {
-  flex: 1; /* Ensures equal space between columns */
-  text-align: left; /* Default left-alignment */
+  flex: 1;
+  text-align: left;
   padding-left: 10px;
   color: #526d82;
 }
 
-/* Aligning Semester and Attendance in the center */
 .column.semester, .column.attendance {
-  text-align: center; /* Center alignment for semester and attendance */
+  text-align: center;
 }
 
 /* List container styling */
@@ -46,7 +51,6 @@
   gap: 15px;
 }
 
-/* Student row styling */
 .list {
   display: flex;
   justify-content: space-between;
@@ -56,7 +60,6 @@
   transition: 0.3s ease-in-out;
 }
 
-/* Student detail styling */
 .student--detail {
   display: flex;
   align-items: center;
@@ -70,33 +73,20 @@
   border-radius: 50%;
 }
 
-/* Hover effect for the entire row */
-.list:hover {
-  background: #dde6ed;
-  border-radius: 10px;
-}
-
-/* Adjusting column widths */
-.column {
-  width: 25%; /* Each column takes up 25% of the total row width */
-}
-
 span {
   color: #526d82;
 }
 
-/* Remove underline from Link components (student--link class) */
 .student--link {
-  text-decoration: none !important; /* Force remove the underline */
-  color: inherit; /* Keep the text color the same as its container */
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Optional: Hover effect for the links */
-.student--link:hover {
-  color: #3b5060; /* Change the color when hovering over the link */
+.student--link:hover .list {
+  background: #dde6ed;
+  border-radius: 10px;
 }
 
-/* Responsive design (optional) */
 @media (max-width: 768px) {
   .column {
     width: 100%;

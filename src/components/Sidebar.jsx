@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BiHome,BiUser, BiComment, BiCog } from 'react-icons/bi';
+import { BiHome, BiUser, BiCheckCircle, BiCalendar, BiBook } from 'react-icons/bi';
 import "../styles/sidebar.css";
 
 const Sidebar = () => {
@@ -15,6 +15,7 @@ const Sidebar = () => {
         </Link>
       </div>
       <div className="menu--list">
+        {/* Dashboard */}
         <Link
           to={`/dashboard/${prn}`}
           className={`item ${location.pathname === `/dashboard/${prn}` ? "active" : ""}`}
@@ -23,28 +24,40 @@ const Sidebar = () => {
           Dashboard
         </Link>
 
+        {/* Active Mentees */}
         <Link
-          to={`/student-list/${prn}`}
-          className={`item ${location.pathname === `/student-list/${prn}` ? "active" : ""}`}
+          to={`/active-mentees/${prn}`}
+          className={`item ${location.pathname === `/active-mentees/${prn}` ? "active" : ""}`}
         >
           <BiUser className="icon" />
-          Student List
+          Active Mentees
         </Link>
 
+        {/* Changes for Approval */}
         <Link
-          to={`/mentee-queries/${prn}`}
-          className={`item ${location.pathname === `/mentee-queries/${prn}` ? "active" : ""}`}
+          to={`/changes-for-approval/${prn}`}
+          className={`item ${location.pathname === `/changes-for-approval/${prn}` ? "active" : ""}`}
         >
-          <BiComment className="icon" />
-          Mentee Queries
+          <BiCheckCircle className="icon" />
+          Changes for Approval
         </Link>
 
+        {/* Leave Approval */}
         <Link
-          to={`/settings/${prn}`}
-          className={`item ${location.pathname === `/settings/${prn}` ? "active" : ""}`}
+          to={`/leave-approval/${prn}`}
+          className={`item ${location.pathname === `/leave-approval/${prn}` ? "active" : ""}`}
         >
-          <BiCog className="icon" />
-          Settings
+          <BiCalendar className="icon" />
+          Leave Approval
+        </Link>
+
+        {/* Mentor Observations */}
+        <Link
+          to={`/mentor-observations/${prn}`}
+          className={`item ${location.pathname === `/mentor-observations/${prn}` ? "active" : ""}`}
+        >
+          <BiBook className="icon" />
+          Mentor Observations
         </Link>
       </div>
     </div>
@@ -52,3 +65,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+  
