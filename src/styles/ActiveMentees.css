@@ -1,98 +1,196 @@
-.student--list {
-  width: 100%; /* Occupy full width */
-  padding: 20px; /* Add consistent spacing */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
-}
-
-.list--header {
-  display: flex;
-  margin-bottom: 1rem;
-  justify-content: space-between;
-}
-
-.list--header h2 {
-  color: #526d82;
-}
-
-.list--header select {
+/* General Dashboard Styles */
+.mentee-dashboard {
+  padding: 20px;
+  background-color: #fff;
   border-radius: 10px;
-  border: 1px solid #dde6ed;
-  padding: 8px 12px;
-  color: #526d82;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Table header styling */
-.table--header {
-  display: flex;
-  justify-content: space-between;
+/* Filter Section Styles */
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
   padding: 10px;
-  font-weight: bold;
-  color: #526d82;
-  background-color: #dde6ed;
-  border-radius: 10px;
   margin-bottom: 15px;
-}
-
-.column {
-  flex: 1;
-  text-align: left;
-  padding-left: 10px;
+  border: 1px solid #dde6ed;
+  border-radius: 8px;
+  font-size: 14px;
   color: #526d82;
 }
 
-.column.semester, .column.attendance {
-  text-align: center;
-}
-
-/* List container styling */
-.list--container {
+.filter-controls {
   display: flex;
-  flex-direction: column;
   gap: 15px;
+  margin-bottom: 20px;
 }
 
-.list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #dde6ed;
-  transition: 0.3s ease-in-out;
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #dde6ed;
+  border-radius: 8px;
+  color: #526d82;
+  background-color: #fff;
+  min-width: 150px;
 }
 
-.student--detail {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Table Styles */
+.table-container {
+  border: 1px solid #dde6ed;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.student--detail img {
-  width: 50px;
-  height: 50px;
-  background: #dde6ed;
-  border-radius: 50%;
-}
-
-span {
+.table-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #dde6ed;
+  padding: 12px;
+  font-weight: 600;
   color: #526d82;
 }
 
-.student--link {
-  text-decoration: none;
-  color: inherit;
+.header-cell {
+  padding: 8px;
+  text-align: left;
 }
 
-.student--link:hover .list {
-  background: #dde6ed;
-  border-radius: 10px;
+/* Table Row Styles */
+.table-body {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 12px;
+  border-bottom: 1px solid #dde6ed;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+/* General Table Cell Styles */
+.table-cell {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Status Color Classes */
+.defaulter {
+  background-color: rgba(255, 0, 0, 0.434);
+  color: black;
+}
+
+.regular {
+  background-color: rgba(17, 255, 0, 0.438);
+  color: black;
+}
+
+.active-learner {
+  background-color: #007bff64;
+  color: black;
+}
+
+.passive-learner {
+  background-color: #ffc10754;
+  color: black;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.pagination-button {
+  padding: 8px 16px;
+  border: 1px solid #dde6ed;
+  border-radius: 8px;
+  background-color: white;
+  color: #526d82;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #dde6ed;
+}
+
+.page-info {
+  color: #526d82;
+  font-weight: 500;
+}
+
+/* Loading & Error Messages */
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  color: #526d82;
+}
+
+.error {
+  color: #dc3545;
+}
+
+
+/* Table Body Styles */
+.table-body {
+  max-height: 600px;
+  overflow-y: auto;
+  scrollbar-width: none;  /* For Firefox */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, etc.) */
+.table-body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .filter-controls {
+    flex-wrap: wrap;
+  }
+
+  .filter-select {
+    flex: 1;
+    min-width: 120px;
+  }
 }
 
 @media (max-width: 768px) {
-  .column {
-    width: 100%;
-    text-align: left;
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
-  .table--header, .list {
-    flex-direction: column;
+
+  .header-cell {
+    border-bottom: 1px solid #dde6ed;
+    padding: 8px 0;
+  }
+
+  .table-cell {
+    padding: 4px 0;
+  }
+
+  .filter-select {
+    width: 100%;
   }
 }
