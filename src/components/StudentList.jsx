@@ -44,11 +44,11 @@ const DashboardTable = () => {
       <div className="table--controls">
         <input
           type="text"
-          placeholder="Search by Batch (e.g., H1)"
+          placeholder="Search by Batch"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <select onChange={(e) => setSemesterFilter(e.target.value)}>
+        <select onChange={(e) => setSemesterFilter(e.target.value)} value={semesterFilter}>
           <option value="all">All Semesters</option>
           <option value="1">Semester 1</option>
           <option value="2">Semester 2</option>
@@ -58,8 +58,6 @@ const DashboardTable = () => {
           <option value="6">Semester 6</option>
           <option value="7">Semester 7</option>
           <option value="8">Semester 8</option>
-
-          {/* Add more options as needed */}
         </select>
       </div>
       <div className="table--header">
@@ -68,7 +66,7 @@ const DashboardTable = () => {
         <div className="column">Semester</div>
         <div className="column">Number of Mentees</div>
       </div>
-      <div className="table--body">
+      <div className="table--body scrollable-container">
         {filteredBatches.map((batch, index) => (
           <div key={index} className="table--row">
             <div className="column">{batch.batchName}</div>
