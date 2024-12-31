@@ -145,7 +145,7 @@ const ActiveMentees = () => {
   );
 
   const handleStudentClick = (studentId) => {
-    navigate(`/studentDetails/${studentId}`);
+    navigate(`/student-detail-dummy/${studentId}`);
   };
 
   if (loading) return <div className="loading">Loading mentees data...</div>;

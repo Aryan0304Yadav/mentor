@@ -11,6 +11,7 @@ import ActiveMentees from './components/ActiveMentees'; // Import ActiveMentees 
 import ChangesForApproval from './components/ChangesForApproval'; // Import ChangesForApproval component
 import LeaveApproval from './components/LeaveApproval'; // Import LeaveApproval component
 import MentorObservations from './components/MentorObservations'; // Import MentorObservations component
+import StudentDetailDummy from "./components/StudentDetailDummy";
 import './App.css';
 
 const App = () => {
@@ -35,6 +36,8 @@ const App = () => {
 
             {/* Mentor-view of the Mentee's filled form (Student Detail route) */}
             <Route path="/student-detail/:prn" element={<StudentDetail />} /> {/* Displays the form data filled by mentee */}
+
+            <Route path="/student-detail-dummy/:prn" element={<StudentDetailDummy />} />
 
             {/* Newly added routes */}
             <Route path="/active-mentees/:prn" element={<ActiveMentees />} />
