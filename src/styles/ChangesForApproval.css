@@ -1,0 +1,266 @@
+/* Main container styles */
+.changes-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Search section styles */
+.search-section {
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Changes list styles */
+.changes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.change-item {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.change-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.1),
+              0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.prn-header {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+/* Versions container styles */
+.versions-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.version-box {
+  flex: 1;
+}
+
+.version-title {
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+  font-size: 0.800rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.version-content {
+  background-color: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Button styles */
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.reject-button,
+.approve-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reject-button {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.reject-button:hover {
+  background-color: #fecaca;
+}
+
+.approve-button {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.approve-button:hover {
+  background-color: #bbf7d0;
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pagination-button {
+  padding: 0.625rem 1.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #4b5563;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f3f4f6;
+}
+
+.page-info {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Confirmation dialog styles */
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+.confirmation-dialog {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.confirmation-dialog h3 {
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.confirmation-dialog p {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.cancel-button,
+.confirm-button {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.cancel-button:hover {
+  background-color: #e5e7eb;
+}
+
+.confirm-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.confirm-button:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .changes-container {
+    padding: 1rem;
+  }
+
+  .versions-container {
+    grid-template-columns: 1fr;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+  }
+
+  .reject-button,
+  .approve-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .confirmation-dialog {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
