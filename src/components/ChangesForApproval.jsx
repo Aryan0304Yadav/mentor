@@ -199,3 +199,14 @@
 // };
 
 // export default ChangesForApproval;
+
+
+import React from 'react'
+
+const ChangesForApproval = () => {
+  return (
+    <div>ChangesForApproval</div>
+  )
+}
+
+export default ChangesForApproval
