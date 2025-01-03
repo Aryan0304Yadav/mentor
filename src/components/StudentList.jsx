@@ -12,7 +12,7 @@ const DashboardTable = () => {
   useEffect(() => {
     // Dummy API for fetching batches
     axios
-      .get("https://run.mocky.io/v3/183e30f8-2487-4e1e-828d-49b7226d9935") // Replace with your API
+      .get("https://run.mocky.io/v3/f57e5a01-5190-43e3-9797-a4c1fec4c839") // Replace with your API
       .then((response) => {
         setBatches(response.data);
         setLoading(false);

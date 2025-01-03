@@ -1,0 +1,51 @@
+.chart {
+  max-width: 100%; /* Make the chart responsive to its container */
+  height: auto; /* Maintain the aspect ratio */
+  padding: 20px; /* Reduce padding for better fit */
+  margin: 0 auto;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: space-between; /* Space out dropdowns evenly */
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.dropdowns label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem; /* Adjust font size for consistency */
+  color: #3a6ea5;
+}
+
+.dropdowns select {
+  background: #f0f4f8;
+  padding: 6px 8px;
+  border-radius: 5px;
+  border: 1px solid #d3e4f6;
+  color: #333;
+  font-size: 0.9rem;
+  outline: none;
+  width: 150px; /* Adjust width to better align with design */
+}
+
+.dropdowns select:focus {
+  background: #e6f0fa;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* Match the section's background */
+  padding: 15px; /* Add padding for spacing */
+  border: 1px solid #d3e4f6;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container canvas {
+  max-width: 100%; /* Make the canvas responsive */
+  height: auto;
+}

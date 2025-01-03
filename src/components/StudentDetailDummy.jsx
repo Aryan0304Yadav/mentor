@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./../styles/studentDetaildummy.css";
+import ChartComponent from "./AttendanceChart";
 
 const StudentDetailDummy = () => {
     const { prn } = useParams();
@@ -79,7 +80,7 @@ const StudentDetailDummy = () => {
                 <div className="statistics">
                     <div className="attendance-chart">
                         <h3>Attendance Chart</h3>
-                        <div className="chart-placeholder">Chart Data Here</div>
+                        <ChartComponent></ChartComponent>
                     </div>
                     <div className="cgpa-table">
                         <h3>SGPA Table</h3>
